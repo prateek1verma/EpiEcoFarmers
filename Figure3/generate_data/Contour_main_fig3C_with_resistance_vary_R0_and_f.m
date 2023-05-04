@@ -1,0 +1,84 @@
+% close all; 
+clear;
+tic
+
+% Parameters of the model
+beta_r = 0.00; % Transmission rate of the resistant strain
+mu = 5; % Natural death rate of the host population
+N = 1000; % Total number of hosts
+y = 0.5; % Yield per unit area of a field
+eps_w = 0.7; % Efficacy of the fungicide on the wild-type strain
+eps_r = 0; % Efficacy of the fungicide on the resistant strain
+tspan = [0 500]; % Time interval for solving the ODE system
+nn = 21; % Number of points in the r_vec and beta_vec vectors
+r_vec = linspace(0,0.7,nn); % Vector of relative fungicide cost
+beta_vec = linspace(0,0.05,nn); % Vector of transmission rate of the wild-type strain
+R0_vec = beta_vec*N/mu; % Vector of basic reproduction number of the wild-type strain
+Theta_opt = zeros(nn,nn); % Matrix to store the optimal control parameter for each (r,beta) pair
+
+parfor jj = 1:nn % Parallel loop over beta_vec
+    for ii = 1:nn % Nested loop over r_vec
+
+    % Parameters of the model for each r and beta value
+    beta_w = beta_vec(jj); % Transmission rate of the wild-type strain
+    r_dummy_vec = r_vec;
+    r = r_dummy_vec(ii); % Relative fungicide cost for the current iteration
+    
+    % Vectors for system restrictions and control
+    Theta_vec = 0:0.01:1;
+    Net_gain = zeros(length(Theta_vec),1);
+    
+    % Initial conditions of the model
+    init_infect_prop = 0.01; % Initial proportion of infected hosts
+    init_freq_resist = 0.0; % Initial frequency of the resistant strain
+    
+    % Solving Dynamical System for each theta
+    iter = 1;
+        for theta = Theta_vec
+        % Setting initial conditions for the ODE system
+        Theta0 = theta;
+        I_uw0 = (1.0 - init_freq_resist)*(1 - Theta0)*init_infect_prop*N;
+        I_tw0 = (1.0 - init_freq_resist)*(Theta0)*init_infect_prop*N;
+        I_ur0 = (init_freq_resist)*(1 - Theta0)*init_infect_prop*N;
+        I_tr0 = (init_freq_resist)*(Theta0)*init_infect_prop*N;
+        Y_Kutta0 = [I_uw0 , I_tw0, I_ur0, I_tr0];
+        
+        % Solving the ODE system
+        [t,Y_Kutta] = ode15s(@(t,Y_Kutta) model_FarmerGT_with_resistance(t, Y_Kutta,beta_w,beta_r,mu,eps_w,eps_r,N,theta), tspan, Y_Kutta0);
+        
+        % Calculating the net gain for the current theta value
+        Net_gain(iter) = (N-sum(Y_Kutta(end,:)) + sum(Y_Kutta(end,:))*y )./N - theta*r;
+        iter = iter + 1;
+        end
+    
+    % Finding the optimal control parameter value for the current (r,beta) pair    
+    Theta_opt(jj,ii) = min(Theta_vec(Net_gain==max(Net_gain)));
+    end
+end
+
+% Output
+% This code block creates a figure that displays the optimal funcicide coverage 
+% for a fungal spread model under different values of the basic reproduction number 
+% and relative fungicide cost. 
+figure()  % creates a new figure
+Theta_opt = flipud(Theta_opt); % flips the optimal control strategy matrix vertically for better visualization
+imagesc([r_vec(1) r_vec(end)], [R0_vec(1) R0_vec(end)],Theta_opt) % displays the optimal control strategy as a heatmap
+set(gca,'TickDir','out'); % sets the tick direction of the axes to outward
+% The only other option is 'in'
+set(gca,'FontSize',20) % sets the font size of the axis labels and tick labels
+hax = gca; % gets the current axis handle
+hax.YRuler.MinorTick='on'; % turns on the minor tick marks on the y-axis
+hax.XRuler.MinorTick='on'; % turns on the minor tick marks on the x-axis
+grid on % turns on the grid lines
+hax.YTickLabel = flipud(hax.YTickLabel); % flips the y-axis tick labels for better visualization
+xlabel('Relative fungicide cost, $$f$$','interpreter','latex',FontSize=22) % sets the x-axis label with LaTeX formatting
+ylabel('Basic reproduction number, $$R_0$$','interpreter','latex',FontSize=22) % sets the y-axis label with LaTeX formatting
+colormap gray % sets the colormap to grayscale
+colorbar % displays the colorbar
+axis square % sets the aspect ratio of the axes to 1:1 for a square image
+
+writematrix(Theta_opt,'Fig3C.txt','Delimiter','tab')
+% hold on
+% [C1,h1] = imcontour([r_vec(1) r_vec(end)], [R0_vec(1) R0_vec(end)], Theta_opt,'--k','ShowText','on');
+toc
+
