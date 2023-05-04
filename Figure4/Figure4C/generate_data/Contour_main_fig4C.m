@@ -2,7 +2,7 @@
 clear;
 tic
 % Parameters of the model
-nn = 501;
+nn = 51;
 beta_w = 0.02;
 beta_r = 0.02; 
 mu =  5; 
@@ -68,6 +68,8 @@ colormap gray
 colorbar
 axis square
 
+dlmwrite('Fig4C.txt',Theta_opt)
+% writematrix(Theta_opt,'Fig4C.txt','Delimiter','tab')
 % hold on
 % [C1,h1] = imcontour([r_vec(1) r_vec(end)], [eps_r_vec(1) eps_r_vec(end)], Theta_opt,'--k','ShowText','on');
 toc
