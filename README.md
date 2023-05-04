@@ -1,7 +1,6 @@
 # EpiEcoFarmers
 Codes for the generation of Figures for the project 'EpiEcoFarmers'
 
-[![DOI](https://zenodo.org/badge/390775289.svg)](https://zenodo.org/badge/latestdoi/390775289)
 
 ### This code is associated with the paper titled "Farmers’ decision-making on fungicide treatment in multiple fields"
 
