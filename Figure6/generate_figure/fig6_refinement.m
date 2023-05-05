@@ -72,7 +72,7 @@ hold on
 annotation('textbox', [0.33, 0.97, 0, 0], 'string', 'B','FontSize',30)
 
 % Add arrow to the y-axis value
-x = [1/3 + 0.025, 1/3 + .045];
+x = [1.005/3 + 0.025, 1.005/3 + .045];
 y = [0.545 0.545];
 ta = annotation('textarrow',x,y,'String',' ');
 ta.LineWidth = 0.75;
@@ -104,7 +104,7 @@ hold on
 annotation('textbox', [0.67, 0.97, 0, 0], 'string', 'C','FontSize',30)
 
 % Add arrow to the y-axis value
-x = [2/3 + 0.025, 2/3 + .045];
+x = [2.01/3 + 0.025, 2.01/3 + .045];
 y = [0.545 0.545];
 ta = annotation('textarrow',x,y,'String',' ');
 ta.LineWidth = 0.75;
