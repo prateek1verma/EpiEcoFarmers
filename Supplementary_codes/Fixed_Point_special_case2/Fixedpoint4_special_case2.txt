@@ -1,8 +1,0 @@
-Iuw_fix4 =
-(N*beta_w^2 - N*beta_r*beta_w - beta_r*epsilon_r*mu + beta_w*epsilon_r*mu - N*beta_w^2*epsilon_r - N*beta_w^2*theta + N*beta_w^2*epsilon_r*theta + N*beta_r*beta_w*epsilon_r)/(beta_w*(beta_r - beta_w)*(epsilon_r - 1))
-Itw_fix4 =
-0
-Iur_fix4 =
-(beta_r*mu - beta_w*mu + N*beta_r*beta_w*theta - N*beta_r*beta_w*epsilon_r*theta)/(beta_w*(beta_r - beta_w)*(epsilon_r - 1))
-Itr_fix4 =
--(beta_r*mu - beta_w*mu + N*beta_r*beta_w*theta - N*beta_r*beta_w*epsilon_r*theta)/(beta_r*beta_w*(epsilon_r - 1))

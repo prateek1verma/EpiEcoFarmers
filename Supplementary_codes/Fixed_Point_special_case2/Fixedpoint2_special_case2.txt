@@ -1,8 +1,0 @@
-Iuw_fix2 =
-0
-Itw_fix2 =
-0
-Iur_fix2 =
-(N*beta_r - epsilon_r*mu + (N^2*beta_r^2 + epsilon_r^2*mu^2 - 2*N^2*beta_r^2*epsilon_r + N^2*beta_r^2*epsilon_r^2 - 2*N*beta_r*epsilon_r^2*mu + 2*N*beta_r*epsilon_r*mu - 4*N*beta_r*epsilon_r*mu*theta + 4*N*beta_r*epsilon_r^2*mu*theta)^(1/2) + N*beta_r*epsilon_r - 2*N*beta_r*epsilon_r*theta)/(2*beta_r*epsilon_r)
-Itr_fix2 =
-(N*beta_r + epsilon_r*mu + (N^2*beta_r^2 + epsilon_r^2*mu^2 - 2*N^2*beta_r^2*epsilon_r + N^2*beta_r^2*epsilon_r^2 - 2*N*beta_r*epsilon_r^2*mu + 2*N*beta_r*epsilon_r*mu - 4*N*beta_r*epsilon_r*mu*theta + 4*N*beta_r*epsilon_r^2*mu*theta)^(1/2) - N*beta_r*epsilon_r + 2*N*beta_r*epsilon_r^2*theta - 2*N*beta_r*epsilon_r*theta)/(2*beta_r*epsilon_r*(epsilon_r - 1))
