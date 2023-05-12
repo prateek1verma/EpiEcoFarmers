@@ -1,8 +1,0 @@
-Iuw_fix2 =
-0
-Itw_fix2 =
-0
-Iur_fix2 =
-((theta - 1)*(mu - N*beta_r))/beta_r
-Itr_fix2 =
--(theta*(mu - N*beta_r))/beta_r

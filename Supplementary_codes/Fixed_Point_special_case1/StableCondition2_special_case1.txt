@@ -1,5 +1,0 @@
-EigJ2 =
-                                              -mu
-                                    mu - N*beta_r
-                                        -N*beta_r
--(beta_r*mu - beta_w*mu + beta_w*mu*theta)/beta_r
