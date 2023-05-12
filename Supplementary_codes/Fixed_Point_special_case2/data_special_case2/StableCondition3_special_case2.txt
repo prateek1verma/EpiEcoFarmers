@@ -1,0 +1,5 @@
+EigJ3 =
+(beta_r*mu - beta_w*mu + N*beta_r*beta_w*theta - N*beta_r*beta_w*epsilon_r*theta)/beta_w
+                                                                                     -mu
+                                                                                     -mu
+                                                          mu - N*beta_w + N*beta_w*theta
