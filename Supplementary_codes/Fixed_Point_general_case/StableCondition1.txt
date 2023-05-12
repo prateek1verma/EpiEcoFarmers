@@ -1,0 +1,5 @@
+EigJ1 =
+                                     -mu
+                                     -mu
+N*beta_r - mu - N*beta_r*epsilon_r*theta
+N*beta_w - mu - N*beta_w*epsilon_w*theta
