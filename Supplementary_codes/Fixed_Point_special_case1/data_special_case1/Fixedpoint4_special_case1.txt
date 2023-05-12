@@ -1,0 +1,8 @@
+Iuw_fix4 =
+-(mu - N*beta_w + N*beta_w*theta)/beta_w
+Itw_fix4 =
+0
+Iur_fix4 =
+0
+Itr_fix4 =
+0
