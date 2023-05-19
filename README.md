@@ -3,7 +3,7 @@
 
 ## Overview ##
 
-The repository includes all the necessary code and data to reproduce the figures. The final figures are also provided in the repository for convenience. The code is organized in folders corresponding to the figure numbers mentioned in the main manuscript. The code is written in a combination of Matlab and Python.
+The repository includes all the necessary code and data to reproduce the figures. The final figures are also provided in the respective folders for convenience. The code is organized in folders corresponding to the figure numbers mentioned in the main manuscript. The code is written in a combination of Matlab and Python.
 
 The numerical simulations, data generation, and figure production code can be found in the respective folders. For analytical computations, the code to generate expressions for the basic reproduction number $R_0$, fixed points, and stability conditions of the fixed points is available in the "Supplementary_codes" folder. These expressions were computed using Matlab's Symbolic Math Toolbox (version R2022b). Additionally, Mathematica (version X.X.X) was used to verify some of the analytical results.
 
