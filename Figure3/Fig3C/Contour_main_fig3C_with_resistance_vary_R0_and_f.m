@@ -10,7 +10,7 @@ y = 0.5; % Yield per unit area of a field
 eps_w = 0.7; % Efficacy of the fungicide on the wild-type strain
 eps_r = 0; % Efficacy of the fungicide on the resistant strain
 tspan = [0 500]; % Time interval for solving the ODE system
-nn = 101; % Number of points in the r_vec and beta_vec vectors
+nn = 501; % Number of points in the r_vec and beta_vec vectors
 r_vec = linspace(0,0.7,nn); % Vector of relative fungicide cost
 beta_vec = linspace(0,0.05,nn); % Vector of transmission rate of the wild-type strain
 R0_vec = beta_vec*N/mu; % Vector of basic reproduction number of the wild-type strain
@@ -79,7 +79,7 @@ axis square % sets the aspect ratio of the axes to 1:1 for a square image
 
 filename = num2str(['fig3C_vary_R0_nn_',num2str(nn),'.fig']);
 savefig(filename);
-writematrix(Theta_opt,'Fig3C.txt','Delimiter','tab')
+% writematrix(Theta_opt,'Fig3C.txt','Delimiter','tab')
 % dlmwrite('Fig3C.txt',Theta_opt)
 % hold on
 % [C1,h1] = imcontour([r_vec(1) r_vec(end)], [R0_vec(1) R0_vec(end)], Theta_opt,'--k','ShowText','on');

@@ -61,7 +61,9 @@ end
 
 annotation('textbox', [0.05, 0.97, 0, 0], 'string', 'C','FontSize',30)
 ax = gca;
+print('Fig3C.eps','-depsc')
+% ax = gca;
 % exportgraphics(ax,'Fig3C.pdf')
-savefig('fig3_vary_R0_lines.fig')
+% savefig('fig3_vary_R0_lines.fig')
 % contourf([0 1], [0 10], cdata1, 'edgecolor' , 'none' )
 
