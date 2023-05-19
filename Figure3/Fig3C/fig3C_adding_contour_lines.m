@@ -1,14 +1,18 @@
 close all
 clear;
-h = openfig('fig3C_vary_R0_nn_501.fig');
-imgs = findobj(h, 'type' , 'image' );
-cdata1 = imgs.CData;
+%% 
+% Adds contour line and other lines on the already generated heatmap using
+% 'Contour_main_fig3C_with_resistance_vary_R0_and_f.m'
+% Be careful about which file is being loaded for the editing purpose using this program. 
+h = openfig('fig3C_vary_R0_nn_501.fig'); % Opens the file on which contour lines and other lines needs to be added
+imgs = findobj(h, 'type' , 'image' );    % loads the image content in imgs handle
+cdata1 = imgs.CData;                     % loads the Cdata of the image 
 
 % Create figure
 figure;
 
 % Create image
-cdata1(cdata1==0) = NaN;
+cdata1(cdata1==0) = NaN;        % replace with NaN values where 0 is present in cdata
 
 imagesc([0 0.7], [0 10],cdata1,'CDataMapping','scaled') % displays the economic cost of resistance as a heatmap
 set(gca,'TickDir','out'); % sets the tick direction of the axes to outward
