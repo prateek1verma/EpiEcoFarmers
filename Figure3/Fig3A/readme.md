@@ -1,15 +1,15 @@
-# Figure Generation for Farmer Decision-Making
+## Figure Generation for Farmer Decision-Making
 
-This repository contains the code for generating Figure 3A, which demonstrates the relationship between fungicide coverage (theta) and net return, considering different relative fungicide prices (f). The code utilizes Matlab for solving the system of ordinary differential equations (ODEs) defined by equations (1)-(4) in the main text.
+This folder contains the code for generating Figure 3A, which demonstrates the relationship between fungicide coverage (theta) and net return, considering different relative fungicide prices (f). The code utilizes Matlab for solving the system of ordinary differential equations (ODEs) defined by equations (1)-(4) in the main text.
 
-## File Descriptions
+### File Descriptions
 
 - `ODE_main_FarmerGT_fig3A_without_resistance.m`: This Matlab script generates Figure 3A by solving the ODE system defined in equations (1)-(4) in the paper without considering resistance. 
 It plots the net return as a function of theta (fungicide coverage) for various values of f (relative fungicide price).
 
 - `model_FarmerGT_with_resistance.m`: This file is a component used in the main code (`ODE_main_FarmerGT_fig3A_without_resistance.m`). It defines the set of ODEs required to simulate the dynamics of the system.
 
-## Instructions
+### Instructions
 
 To reproduce Figure 3A, follow these steps:
 
