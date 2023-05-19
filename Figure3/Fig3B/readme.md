@@ -1,4 +1,4 @@
-This folder contains the code for generating Figure 3B, which demonstrates the relationship between fungicide coverage (theta) and net return, considering different relative fungicide prices (f) and $R_0 = 2$. The code utilizes Matlab for solving the system of ordinary differential equations (ODEs) defined by equations (1)-(4) in the main text.
+This folder contains the code for generating Figure 3B, which demonstrates the relationship between fungicide coverage (theta) and net return, considering different relative fungicide prices (f) and fixed `$R_0=2$`. Other fixed parameters of the model are specified in the main code. The code utilizes Matlab for solving the system of ordinary differential equations (ODEs) defined by equations (1)-(4) in the main text.
 
 ### File Descriptions
 
