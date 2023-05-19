@@ -2,21 +2,26 @@
 Codes for the generation of Figures for the project 'EpiEcoFarmers'
 
 
-### This code is associated with the paper titled "Farmers’ decision-making on fungicide treatment in multiple fields"
+### This repository contains the code for generating figures presented in the paper titled "Farmers’ decision-making on fungicide treatment in multiple fields".
 
 
 ## Overview ##
 
-This repository contains and all of the code and data required to reproduce the figures presented in: *Farmers’ decision-making on fungicide treatment in multiple fields*.
+The repository includes all the necessary code and data to reproduce the figures. The final figures are also provided in the repository for convenience. The code is organized in folders corresponding to the figure numbers mentioned in the main manuscript. The code is written in a combination of Matlab and Python.
 
-All the final figures are also included in the repository. The code included comes in two types:
+The numerical simulations, data generation, and figure production code can be found in the respective folders. For analytical computations, the code to generate expressions for the basic reproduction number $R_0$, fixed points, and stability conditions of the fixed points is available in the "Supplementary_codes" folder. These expressions were computed using Matlab's Symbolic Math Toolbox (version R2022b). Additionally, Mathematica (version X.X.X) was used to verify some of the analytical results.
 
-1. Code for running numerical simulations and generating data (written in a mixture of Matlab and Python)
-2. Code for loading the numerical simulation data and plotting it to reproduce the figures as shown in the text (written in Matlab and Python)
+To reproduce the figures, follow the instructions provided in the corresponding folders. The code utilizes software packages such as Matlab (version R2022b) and Python (version Python 3.11.X) for numerical simulations and solving systems of differential equations.
 
-Analytical and numerical computations were performed using a combination of software packages and programming languages.
-The primary software packages used for numerical simulations and solving systems of differential equations were Matlab (version R2022b), Python (version Python 3.11.X) (?).
+Please refer to the research paper for more details on the methodology and findings.
 
-The codes to generate analytical expressions of the basic reproduction number $R_0$, fixed points, stability conditions of the fixed points are provided in the folder 'Supplementary_codes'. 
-These expressions were computed using Matlab's Symbolic Math Toolbox (version R2022b).
-Mathematica (version X.X.X) was employed to verify the results of some analytical analysis.
+For any questions or clarifications, feel free to reach out to the authors.
+
+Thank you for your interest in our work!
+
+## Contact information ##
+
+* Prateek Verma, Email: prateek4d@gmail.com
+* Alexey Mikaberidze, Email: a.mikaberidze@reading.ac.uk
+* Maria Bargués Ribera, Email: mariabargues1@gmail.com
+* Chaitanya Gokhale, Email: chaitanya.gokhale@uni-wuerzburg.de
