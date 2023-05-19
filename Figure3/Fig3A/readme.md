@@ -4,7 +4,7 @@ This folder contains the code for generating Figure 3A, which demonstrates the r
 
 ### File Descriptions
 
-- `ODE_main_FarmerGT_fig3A_without_resistance.m`: This Matlab script generates Figure 3A by solving the ODE system defined in equations (1)-(4) in the paper without considering resistance. 
+- `ODE_main_FarmerGT_fig3A_without_resistance.m`: This Matlab script generates Figure 3A by solving the ODE system defined in equations (1)-(4) in the paper using 4th order Runge-Kutta method. 
 It plots the net return as a function of theta (fungicide coverage) for various values of f (relative fungicide price).
 
 - `model_FarmerGT_with_resistance.m`: This file is a component used in the main code (`ODE_main_FarmerGT_fig3A_without_resistance.m`). It defines the set of ODEs required to simulate the dynamics of the system.
