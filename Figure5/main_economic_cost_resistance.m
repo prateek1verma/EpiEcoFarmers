@@ -48,7 +48,7 @@ Net_gain_without_resistance = zeros(1,nn); % Matrix to store the Net gain for ea
         Y_Kutta0 = [I_uw0 , I_tw0, I_ur0, I_tr0];
         
         % Solving the ODE system
-        [t,Y_Kutta] = ode45(@(t,Y_Kutta) model_FarmerGT_with_resistance1(t, Y_Kutta,beta_w,beta_r,mu,eps_w,eps_r,N,theta), tspan, Y_Kutta0);
+        [t,Y_Kutta] = ode45(@(t,Y_Kutta) model_FarmerGT_with_resistance(t, Y_Kutta,beta_w,beta_r,mu,eps_w,eps_r,N,theta), tspan, Y_Kutta0);
         
         % Calculating the net gain for the current theta value
         Net_gain(iter) = (N-sum(Y_Kutta(end,:)) + sum(Y_Kutta(end,:))*y )./N - theta*r;
@@ -94,7 +94,7 @@ Net_gain_resistance = zeros(1,nn); % Matrix to store the Net gain for each (r,be
         Y_Kutta0 = [I_uw0 , I_tw0, I_ur0, I_tr0];
         
         % Solving the ODE system
-        [t,Y_Kutta] = ode45(@(t,Y_Kutta) model_FarmerGT_with_resistance1(t, Y_Kutta,beta_w,beta_r,mu,eps_w,eps_r,N,theta), tspan, Y_Kutta0);
+        [t,Y_Kutta] = ode45(@(t,Y_Kutta) model_FarmerGT_with_resistance(t, Y_Kutta,beta_w,beta_r,mu,eps_w,eps_r,N,theta), tspan, Y_Kutta0);
         
         % Calculating the net gain for the current theta value
         Net_gain(iter) = (N-sum(Y_Kutta(end,:)) + sum(Y_Kutta(end,:))*y )./N - theta*r;
@@ -122,7 +122,7 @@ grid on % turns on the grid lines
 xlabel('Relative fungicide cost, $$r$$','interpreter','latex',FontSize=22) % sets the x-axis label with LaTeX formatting
 ylabel('Optimal fungicide coverage, $$\theta^*$$','interpreter','latex',FontSize=22) % sets the y-axis label with LaTeX formatting
 legend('no resistance','with resistance')
-print('theta_opt.eps','-depsc')
+print('Fig_5B_theta_opt.eps','-depsc')
 
 figure()  % creates a new figure
 plot(r_vec',[Net_gain_without_resistance' ,Net_gain_resistance'],'LineWidth',3)
@@ -135,7 +135,7 @@ grid on % turns on the grid lines
 xlabel('Relative fungicide cost, $$r$$','interpreter','latex',FontSize=22) % sets the x-axis label with LaTeX formatting
 ylabel('Optimal net return, $$g_{opt}$$','interpreter','latex',FontSize=22) % sets the y-axis label with LaTeX formatting
 legend('no resistance','with resistance')
-print('Net_return_opt.eps','-depsc')
+print('Fig_5A_Net_return_opt.eps','-depsc')
 
 figure()  % creates a new figure
 Economic_cost_resistance = Net_gain_without_resistance - Net_gain_resistance;
@@ -147,4 +147,4 @@ set(gca,'FontSize',20) % sets the font size of the axis labels and tick labels
 grid on % turns on the grid lines
 xlabel('Relative fungicide cost, $$r$$','interpreter','latex',FontSize=22) % sets the x-axis label with LaTeX formatting
 ylabel('Economic cost of resistance, $$C_R$$','interpreter','latex',FontSize=22) % sets the y-axis label with LaTeX formatting
-print('Economic_cost_resistance.eps','-depsc')
+print('Fig_5C_Economic_cost_resistance.eps','-depsc')
