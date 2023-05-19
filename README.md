@@ -1,7 +1,3 @@
-# Epi-Eco-Farmers
-Codes for the generation of Figures for the project 'EpiEcoFarmers'
-
-
 ### This repository contains the code for generating figures presented in the paper titled "Farmers’ decision-making on fungicide treatment in multiple fields".
 
 
