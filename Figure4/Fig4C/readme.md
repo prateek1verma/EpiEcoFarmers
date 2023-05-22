@@ -1,6 +1,6 @@
 ## MATLAB Code Description
 
-This folder contains the MATLAB code used to generate Figure 3C, which represents a heatmap of the optimal fraction of treated fields maximizing the relative net return. The heatmap varies with respect to the relative yield (`f`) and the fungicide efficacy (`eps_r`). Values of the other parameters are described in the main code.
+This folder contains the MATLAB code used to generate Figure 4C, which represents a heatmap of the optimal fraction of treated fields maximizing the relative net return. The heatmap varies with respect to the relative yield (`f`) and the fungicide efficacy (`eps_r`). Values of the other parameters are described in the main code.
 
 ### File Descriptions
 
