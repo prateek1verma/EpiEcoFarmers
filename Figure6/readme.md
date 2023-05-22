@@ -14,7 +14,7 @@ It plots heatmap of the economic cost of fungicide resistance and its variation 
 It plots heatmap of the economic cost of fungicide resistance and its variation with respect to the effects of fungicide price and relative yield.
 
 
-- `model_FarmerGT_with_resistance1.m.m`: This file is a component used in the main codes for generating figure 6A, 6B and 6C. It defines the set of ODEs required to simulate the dynamics of the system.
+- `model_FarmerGT_with_resistance1.m`: This file is a component used in the main codes for generating figure 6A, 6B and 6C. It defines the set of ODEs required to simulate the dynamics of the system.
 
 
 ### Instructions
