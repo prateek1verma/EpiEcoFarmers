@@ -2,7 +2,7 @@ This folder contains the code for generating Figure 5A, 5B and 5C. The code util
 
 ### File Descriptions
 
-- `main_economic_cost_resistance.m`: This Matlab script generates Figure 5A-C by solving the ODE system first for without resistance case and then for with resistance case using Maltab inbuilt function `ode45`. 
+- `main_economic_cost_resistance.m`: This Matlab script generates Figure 5A-C by solving the ODE system first for without resistance case and then for with resistance case using Maltab inbuilt function `ode45`.
 It plots the optimal net return, optimal fungicide coverage and economic cost of resistance as a function of f (relative fungicide price).
 
 - `model_FarmerGT_with_resistance.m`: This file is a component used in the main code (`main_economic_cost_resistance.m`). It defines the set of ODEs required to simulate the dynamics of the system.
