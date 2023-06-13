@@ -1,0 +1,4 @@
+to reproduce Figure 2:
+1) open Jupyter notebook
+2) specify the directory where the figure will be created, by setting the ddir variable (ddir = '.' current folder by default)
+3) Menu Cell --> Run all
