@@ -8,7 +8,7 @@ Iurdot = 0;
 Itrdot = 0;
 
 % Fixed points with pesticide resistance when eps_w = 1, eps_r = 0. There
-% are four fixed points.
+% are three fixed points.
 fix_pt = solve([Iuwdot==0 Itwdot==0], [Iuw Itw]);
 
 % Saves the fixed points in 'Fixedpoints_general_case.mat'
