@@ -26,7 +26,7 @@ mu =  5;        % Natural death rate of the host population
 eps_w = 1;    % Efficacy of the fungicide on the wild-type strain
 eps_r = 0;    % Efficacy of the fungicide on the resistant strain
 N = 1000;       % Total number of hosts
-y = 0.5;        % Relative yield of a diseased field with respect to the yield from a healthy field
+y = 0.6;        % Relative yield of a diseased field with respect to the yield from a healthy field
 R0 = beta_w*N/mu; % Basic reprodiction number
 
 % Parameters of the Runge-Kutta (4th order) method
@@ -94,4 +94,4 @@ ii = ii + 1;
 end
 
 legend('$f=0.10$','$f=0.25$','$f=0.50$','$f=0.75$','Location','southwest','interpreter','latex',FontSize=18)
-print('FigS1A.eps','-depsc')
+print('FigS1B.eps','-depsc')
