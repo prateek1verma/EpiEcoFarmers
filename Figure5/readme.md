@@ -19,8 +19,8 @@ To reproduce Figure 5A-C, follow these steps:
 
 4. Modify any necessary input parameters within the code, such as initial conditions or model parameters.
 
-5. Run the script in Matlab to generate the figure. The output plot will show the net return as a function of fungicide coverage for different relative fungicide prices.
-
+5. Run the script in Matlab to generate the figures. The output plot will show the optimal net return, optimal fungicide coverage and economic cost of resistance as a function of f (relative fungicide price).
+6. 
 Note: The code utilizes the `model_FarmerGT_with_resistance.m` file to define the ODE system. Ensure both files are in the same directory when running the main code.
 
 For any questions or issues, feel free to contact the authors.
