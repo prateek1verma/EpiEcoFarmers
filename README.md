@@ -1,4 +1,4 @@
-### This repository contains the code for generating figures presented in the paper titled "Farmers’ decision-making on fungicide treatment in multiple fields".
+### This repository contains the code for generating figures presented in the paper titled "Economic analysis of disease and control of multi-field epidemics in agriculture".
 
 
 ## Overview ##
