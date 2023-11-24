@@ -15,9 +15,4 @@ For any questions or clarifications, feel free to reach out to the authors.
 
 Thank you for your interest in our work!
 
-## Contact information ##
 
-* Prateek Verma, Email: prateek4d@gmail.com
-* Alexey Mikaberidze, Email: a.mikaberidze@reading.ac.uk; amikaber@posteo.net
-* Maria Bargués Ribera, Email: mariabargues1@gmail.com
-* Chaitanya Gokhale, Email: chaitanya.gokhale@uni-wuerzburg.de
