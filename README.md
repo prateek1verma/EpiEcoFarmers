@@ -1,4 +1,4 @@
-### This repository contains the code for generating figures presented in the paper titled "Economic analysis of disease and control of multi-field epidemics in agriculture".
+### This repository contains the code for generating figures presented in the paper titled "The cost of fungicide resistance evolution in multi-field plant epidemics".
 
 
 ## Overview ##
