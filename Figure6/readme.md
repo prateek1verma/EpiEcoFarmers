@@ -5,16 +5,21 @@ This folder contain the MATLAB codes used to generate Figure 6A, 6B and 6C that 
 ### File Descriptions
 
 - `Contour_main_economic_cost_vary_eps_r.m`: This Matlab script generates Figure 6A by solving the ODE system described in the paper using Matlab inbuilt function `ode45`.
-It plots heatmap of the economic cost of fungicide resistance and its variation with respect to the effects of fungicide price and degree of resistance.
+It plots a heatmap and generates data on the economic cost of fungicide resistance and its variation with respect to the effects of fungicide price and degree of resistance.
 
 - `Contour_main_economic_cost_vary_R0.m`: This Matlab script generates Figure 6B by solving the ODE system described in the paper using Matlab inbuilt function `ode45`.
-It plots heatmap of the economic cost of fungicide resistance and its variation with respect to the effects of fungicide price and the basic reproductive number.
+It plots a heatmap and generates data on the economic cost of fungicide resistance and its variation with respect to the effects of fungicide price and the basic reproductive number.
 
 - `Contour_main_economic_cost_vary_y.m`: This Matlab script generates Figure 6C by solving the ODE system described in the paper using Matlab inbuilt function `ode45`.
-It plots heatmap of the economic cost of fungicide resistance and its variation with respect to the effects of fungicide price and relative yield.
-
+It plots a heatmap and generates data on the economic cost of fungicide resistance and its variation with respect to the effects of fungicide price and relative yield.
 
 - `model_FarmerGT_with_resistance1.m`: This file is a component used in the main codes for generating figure 6A, 6B and 6C. It defines the set of ODEs required to simulate the dynamics of the system.
+
+-  `Contour_vary_eps_r.txt`: Data file for Figure 6A.
+
+- `Contour_vary_R0_r.txt`: Data file for Figure 6B.
+
+- `Contour_vary_y_r.txt`: Data file for Figure 6C.
 
 
 ### Instructions
