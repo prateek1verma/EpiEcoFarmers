@@ -1,4 +1,4 @@
-% close all; 
+% close all;
 clear;
 tic
 
@@ -11,7 +11,7 @@ y = 0.5; % Yield per unit area of a field
 eps_w = 0.8; % Efficacy of the fungicide on the wild-type strain
 eps_r = 0.5; % Efficacy of the fungicide on the resistant strain
 tspan = [0 200]; % Time interval for solving the ODE system
-nn = 201; % Number of points in the r_vec and beta_vec vectors
+nn = 101; % Number of points in the r_vec and beta_vec vectors
 r_vec = linspace(0,0.5,nn); % Vector of relative fungicide cost
 beta_w = 0.025; % Transmission rate of the wild-type strain
 beta_r = 0.025; % Transmission rate of the wild-type strain
@@ -107,30 +107,34 @@ parfor jj = 1:nn % Parallel loop over beta_vec
     end
 end
 
+toc
+
 %% Output
 % This code block creates a figure that displays the optimal funcicide coverage 
 % for a fungal spread model under different values of the basic reproduction number 
 % and relative fungicide cost. 
+fz = 16;
 figure()  % creates a new figure
 Economic_cost_resistance = Net_gain_without_resistance - Net_gain_resistance;
 Economic_cost_resistance = flipud(Economic_cost_resistance);
+Economic_cost_resistance = round(abs(Economic_cost_resistance),6);
 imagesc([r_vec(1) r_vec(end)], [y_vec(1) y_vec(end)],Economic_cost_resistance) % displays the economic cost of resistance as a heatmap
 set(gca,'TickDir','out'); % sets the tick direction of the axes to outward
 % The only other option is 'in'
-set(gca,'FontSize',20) % sets the font size of the axis labels and tick labels
+set(gca,'FontSize',fz) % sets the font size of the axis labels and tick labels
 hax = gca; % gets the current axis handle
 hax.YRuler.MinorTick='on'; % turns on the minor tick marks on the y-axis
 hax.XRuler.MinorTick='on'; % turns on the minor tick marks on the x-axis
 grid on % turns on the grid lines
 hax.YTickLabel = flipud(hax.YTickLabel); % flips the y-axis tick labels for better visualization
-xlabel('Relative fungicide cost, $$r$$','interpreter','latex',FontSize=22) % sets the x-axis label with LaTeX formatting
-ylabel('Relative yield, $$y$$','interpreter','latex',FontSize=22) % sets the y-axis label with LaTeX formatting
-colormap gray % sets the colormap to grayscale
+xlabel('Relative fungicide cost, $$r$$','interpreter','latex',FontSize=fz) % sets the x-axis label with LaTeX formatting
+ylabel('Relative yield, $$y$$','interpreter','latex',FontSize=fz) % sets the y-axis label with LaTeX formatting
+colormap summer % sets the colormap to grayscale
 colorbar % displays the colorbar
 axis square % sets the aspect ratio of the axes to 1:1 for a square image
 
 hold on
-[C1,h1] = imcontour([r_vec(1) r_vec(end)], [y_vec(1) y_vec(end)], Economic_cost_resistance,'--k','ShowText','on');
-toc
-[C1,h1] = imcontour([0 1], [0 10],'--k','ShowText','on');
+[C1,h1] = imcontour([r_vec(1) r_vec(end)], [y_vec(1) y_vec(end)], Economic_cost_resistance,[0.55,0.5:-0.1:0.1,0.00001],'--k','ShowText','on');
+
+writematrix(Economic_cost_resistance,'Contour_vary_y_r.txt','Delimiter','tab')
 
